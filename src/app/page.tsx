@@ -23,7 +23,7 @@ export default async function HomePage() {
     <main className="">
       <div className="flex flex-wrap justify-center gap-4">
         {posts.map((post) => (
-          <div key={post.id}>{post.name}</div>
+          <div className="" key={post.id}>{post.name} test</div>
         ))}
 
         {mockImages.map((image) => (
