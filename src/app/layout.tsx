@@ -24,7 +24,7 @@ export default function RootLayout({
 }: {children: React.ReactNode; }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} gap-4`}>
+      <body className={`font-sans ${GeistSans.variable} flex flex-col gap-4`}>
         <TopNav/>
         {children}
       </body>
