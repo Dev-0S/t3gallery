@@ -3,7 +3,8 @@
 ## To Do
 
 - [x] Make it deploy
-- [ ] Scaffold basic ui with mock data
+- [x] Scaffold basic ui with mock data
+- [ ] Tidy up build process
 - [ ] Actually set up a database (Vercel PostgreSQL)
 - [ ] Attach database to UI
 - [ ] Add authentication (w/ Clerk)
