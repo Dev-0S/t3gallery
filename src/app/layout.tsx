@@ -2,8 +2,8 @@ import "~/styles/globals.css";
 
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
-import TopNav from "./_components/topnav";
-
+import TopNav from './_components/topnav';
+  
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
