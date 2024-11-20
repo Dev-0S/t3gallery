@@ -3,6 +3,8 @@ import { headers } from "next/headers";
 import Link from "next/link";
 import { db } from "~/server/db";
 export const dynamic = "force-dynamic";
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
+
 
 
 // const mockUrls = [
@@ -17,19 +19,30 @@ export const dynamic = "force-dynamic";
 //   url,
 // }))
 
-export default async function HomePage() {
+
+async function Images() {
   const images = await db.query.images.findMany({
     orderBy: (images, { desc }) => [desc(images.id)]
   });
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      {images.map((image) => (
+        <div className="w-48 text-center" key={image.id}>{image.name} <img src={image.url}/> </div>
+      ))}
+    </div>
+  );
+}
 
-  console.log(images)
+
+export default async function HomePage() {
   return (
     <main className="">
-      <div className="flex flex-wrap justify-center gap-4">
-        {images.map((image) => (
-          <div className="w-48 text-center" key={image.id}>{image.name} <img src={image.url}/> </div>
-        ))}
-      </div>
+      <SignedOut>
+        <div className="flex justify-center items-center text-2xl font-semibold text-center text-white">Sign In to view progress</div>
+      </SignedOut>
+      <SignedIn>
+        <Images/>
+      </SignedIn>
     </main>
   );
 }
