@@ -8,9 +8,8 @@ export async function Images() {
     return blobs;
   }
   const images = await allImages();
- 
   return (
-    <section>
+    <section className="flex flex-row gap-4 overflow-x-auto">
       {images.blobs.map((image) => (
         <Image
           priority

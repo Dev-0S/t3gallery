@@ -44,7 +44,7 @@ export default async function HomePage() {
       <SignedIn>
         <Images1/>
         <div className="flex justify-center items-center"><Form/></div>
-        <Images/>
+        <div className=""><Images/></div>
       </SignedIn>
     </main>
   );
