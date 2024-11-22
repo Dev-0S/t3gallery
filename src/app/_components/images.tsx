@@ -14,7 +14,7 @@ export async function Images() {
       {images.blobs.map((image) => (
         <Image
           priority
-          key={image.pathname}
+          key={image.url}
           src={image.url}
           alt="Image"
           width={200}
