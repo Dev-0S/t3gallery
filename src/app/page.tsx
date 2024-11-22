@@ -4,7 +4,8 @@ import Link from "next/link";
 import { db } from "~/server/db";
 export const dynamic = "force-dynamic";
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
-
+import { Form } from "~/app/_components/form";
+import { Images } from "./_components/images";
 
 
 // const mockUrls = [
@@ -20,7 +21,7 @@ import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@c
 // }))
 
 
-async function Images() {
+async function Images1() {
   const images = await db.query.images.findMany({
     orderBy: (images, { desc }) => [desc(images.id)]
   });
@@ -36,11 +37,13 @@ async function Images() {
 
 export default async function HomePage() {
   return (
-    <main className="">
+    <main className="flex flex-col items-center justify-between h-screen">
       <SignedOut>
         <div className="flex justify-center items-center text-2xl font-semibold text-center text-white">Sign In to view progress</div>
       </SignedOut>
       <SignedIn>
+        <Images1/>
+        <div className="flex justify-center items-center"><Form/></div>
         <Images/>
       </SignedIn>
     </main>

@@ -11,7 +11,17 @@ const config = {
     },
     eslint: {
         ignoreDuringBuilds: true,
-    }
+    },
+
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'mlrcdqq5x657hztn.public.blob.vercel-storage.com',
+            port: '',
+          },
+        ],
+    },
 };
 
 export default config;

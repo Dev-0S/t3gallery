@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
-    @apply bg-black text-white;
+    @apply bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 text-white min-h-screen bg-fixed;
 }
